@@ -1,0 +1,79 @@
+name: Sync upstream action resources
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'preview validates all actions without publishing; publish creates immutable resources'
+        type: choice
+        options: [preview, publish]
+        default: preview
+        required: true
+  schedule:
+    - cron: '17 */6 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: action-resource-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.repository == 'taikulayyds/Dafeiyu-Pet-actions' && github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || vars.ACTION_SYNC_ENABLED == 'true')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - name: Checkout the action repository only
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 1
+          ref: main
+          persist-credentials: false
+      - name: Record protected main baseline
+        run: echo "SYNC_BASE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+      - name: Install transparent video and WebP tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg webp python3-pil
+          ffmpeg -version | head -1
+          cwebp -version
+      - name: Test conversion and sync safeguards
+        run: python3 -m unittest discover -s tests -v
+      - name: Convert new or changed upstream actions
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SYNC_MODE: ${{ github.event.inputs.mode || 'publish' }}
+        run: |
+          if [ "$SYNC_MODE" = publish ]; then
+            python3 scripts/sync_upstream.py --publish
+          else
+            python3 scripts/sync_upstream.py
+          fi
+      - name: Preserve verification and capacity report
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: sync-report-${{ github.run_id }}
+          path: |
+            sync-report.json
+            sync-preview.json
+          if-no-files-found: ignore
+      - name: Commit verified catalog and frame resources
+        if: github.event_name == 'schedule' || github.event.inputs.mode == 'publish'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- actions catalog.json upstream-state.json
+          if git diff --cached --quiet; then
+            echo 'No upstream resource changes.'
+            exit 0
+          fi
+          python3 scripts/check_sync_diff.py "$SYNC_BASE_SHA"
+          git commit -m 'Sync verified upstream 12fps action resources'
+          test "$(git rev-parse HEAD^)" = "$SYNC_BASE_SHA"
+          gh auth setup-git
+          git push origin HEAD:main

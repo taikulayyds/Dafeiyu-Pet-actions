@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.converter-state/
+.history/
+sync-preview.json
+sync-report.json
+.work/
