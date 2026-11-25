@@ -1,0 +1,744 @@
+{
+  "schema": 1,
+  "clip": "beiluoye-yanmo",
+  "title": "被落叶淹没",
+  "width": 640,
+  "height": 360,
+  "frameCount": 121,
+  "durationMs": 10042,
+  "source": {
+    "repository": "https://github.com/PC2005-cloud/dsh-pet",
+    "commit": "fb38ce620576f5ed3735a99536d2b1a4a9eb313f",
+    "file": "dsh-pet/assets/webm/被落叶淹没.webm",
+    "sha256": "91fc8e3dbfcd24546bc30366beb120fb5de7823ed67986dd8032c9c1b29ff079"
+  },
+  "license": "CC-BY-NC-SA-4.0",
+  "frames": [
+    {
+      "file": "frames/000.webp",
+      "bytes": 17112,
+      "sha256": "699c1bd691bb7782a35e2c9593ee619409f26a7f019e4b1d8ec4940a69a85b81",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/001.webp",
+      "bytes": 17566,
+      "sha256": "cadf9bda539eeec0716bbad04a40cc2d3b5cb9ae87b6309e73c2f52660d35f78",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/002.webp",
+      "bytes": 17888,
+      "sha256": "eea2de4ad0c360523bd17a61f41f92d3149275fc79c0f5ad8c817b77ac02b392",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/003.webp",
+      "bytes": 18760,
+      "sha256": "2759700a80e7a94c1d2eab90e4e5c36ba28fe743eb20e1317201a464db9fe27f",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/004.webp",
+      "bytes": 19308,
+      "sha256": "5100910d56b2df6fe36cd61f4ea3197f850c0340a4d65addb954b1c83bd7b857",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/005.webp",
+      "bytes": 20100,
+      "sha256": "5b3a4468c37e818bd9ab24c535abd7ffaf8c38fd5e55c79695531c9f40aa51a3",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/006.webp",
+      "bytes": 20468,
+      "sha256": "6ea9ce87e5af25e6ef0332f096dfdea50849ee9fa1a3734a3788ba7c2f5a155f",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/007.webp",
+      "bytes": 20648,
+      "sha256": "97648f3b447e1067a961a63fd784ada42121c28a520da849904bb4ffdf153ca4",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/008.webp",
+      "bytes": 20552,
+      "sha256": "768f668a12cde371ccf06739e791a5f647eea1f55c03a8e9d73fe4b8b45fdb8c",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/009.webp",
+      "bytes": 20922,
+      "sha256": "69ca97153d05fad9f01a34d47fe8ac151dfb988548289e91a5168eece6e7b9fd",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/010.webp",
+      "bytes": 21506,
+      "sha256": "99ddb18ab33dda0503e2167c2e1b89174b008e1b4db14613b8aa6d9fb4fc4543",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/011.webp",
+      "bytes": 21508,
+      "sha256": "ba139396ccba2cfa6f725f882bbd4d0604c776277141d388891050f17765420c",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/012.webp",
+      "bytes": 21882,
+      "sha256": "866a444785d1e2046875fb59d0e8362af19e9ebee61702499f37b77a26ed9024",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/013.webp",
+      "bytes": 21952,
+      "sha256": "daba8ebb26bcf987d08b8a110b63019c25741adaea8b35cb360414d6eafaeb94",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/014.webp",
+      "bytes": 22050,
+      "sha256": "9a172208c875506c5984ce0c98074e7383e57685bc3ff9f16f725b5f9d1291b9",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/015.webp",
+      "bytes": 22332,
+      "sha256": "e7562937eebebd24e968859258d02901c43c4c45f54dea170f2b64f468299612",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/016.webp",
+      "bytes": 22756,
+      "sha256": "1b3a5ec042f0cbb542578a89746ee87210967bf72b88ef0d1cb1b86333c373d2",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/017.webp",
+      "bytes": 23340,
+      "sha256": "12cfd34c005209e6b7bef3efaef601675f3f9934f514e83dace26e267baa9fae",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/018.webp",
+      "bytes": 23884,
+      "sha256": "90878884594aba7bcd37fe8329b0731a5a840a76b752dcb83c78b3e9ffd007cb",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/019.webp",
+      "bytes": 24326,
+      "sha256": "f39d4790c58a17ddb1a2d8876d47d2b5040d34ea0f63996e5266cf9c7a19b298",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/020.webp",
+      "bytes": 24302,
+      "sha256": "f54a5448326303c335180656b1648bfb70407f192fe57ae790d66e4e81da189f",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/021.webp",
+      "bytes": 25240,
+      "sha256": "68ed15004a09490d0dbeddae7ed0013426750686ea1bcd4385649eaae001c36b",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/022.webp",
+      "bytes": 25912,
+      "sha256": "ac25934d848b76a00d727441b478a8a5069d91dcc2bcd87c3e3e5bc232c76b75",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/023.webp",
+      "bytes": 25820,
+      "sha256": "148460eedf6488e4c397102719962c69986e6e3f439b7837ed01f569c6088ae5",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/024.webp",
+      "bytes": 26382,
+      "sha256": "99c5e42eb565c899dcb7046218701140bb3dc4c840acf49d98b5d9ad102b883e",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/025.webp",
+      "bytes": 23714,
+      "sha256": "72845bd1a3d9e7ba31af4d156be8569c64bbf943e5db7e5cd291a39b894b50c0",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/026.webp",
+      "bytes": 22934,
+      "sha256": "db4e765c5decf14b4661d70365124720ccd47f0f70be65deb933b04ac694a282",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/027.webp",
+      "bytes": 22800,
+      "sha256": "a638b12c81d1f441340ee8eafb7148315ad0ad729013912a1c06ed225bbff88a",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/028.webp",
+      "bytes": 23136,
+      "sha256": "8d689b1e8e5f4d523e98a5f3e5e5bbf139bed2f3a18d21be659781dffc0deb89",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/029.webp",
+      "bytes": 26538,
+      "sha256": "16a952ea8b321cb0b08abd6819f76dde3feb4fc9d8dc9098b01c4dc1cfdefe68",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/030.webp",
+      "bytes": 27610,
+      "sha256": "768256f9bcab466d80ce90db62632836324d9395a9c382234b9a667627c85c56",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/031.webp",
+      "bytes": 22594,
+      "sha256": "54283bfb48d264035a73fd5cc7c1c3279c02732fceeda7ada8b4aa6dc471655e",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/032.webp",
+      "bytes": 22788,
+      "sha256": "8286f5de5eb1b2fd19db4e67348d5ed61d24560fce52ef92ce8af6a20da6ab0e",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/033.webp",
+      "bytes": 22894,
+      "sha256": "820afa998a150465b1377f129cb0debb4584c3fecc5053582d089b5381c60d95",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/034.webp",
+      "bytes": 23020,
+      "sha256": "bd29cb24e4138e7a40d816b9fea79da2fba9c70ca12c50d64032e7d2a6c11f7b",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/035.webp",
+      "bytes": 22560,
+      "sha256": "239878749ef94db0d7cf9db55dbd9dbf2f6378f0648dcb3e54539cebb806c25b",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/036.webp",
+      "bytes": 22900,
+      "sha256": "e33376fc4c42343777510cbbfe6f4351b5c714c6101be24bbfc49dc0f224abfb",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/037.webp",
+      "bytes": 22332,
+      "sha256": "5f2bf02cc0912d9f58cf9605957edcbcc944b5917c8abd43db053ad584f517f0",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/038.webp",
+      "bytes": 21856,
+      "sha256": "88cdf90bff50aec7562f5a9048afa3fcfc133d6a53fcc4c2f2e516084a106021",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/039.webp",
+      "bytes": 21618,
+      "sha256": "af3e09a21bfe4871fe0952342df0526c45e1f4773e143f64ba30702f63e080a3",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/040.webp",
+      "bytes": 21872,
+      "sha256": "0502838a879487c502071708663cea1b259bd2ff6ebe09cb50ba6d54885404e1",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/041.webp",
+      "bytes": 20444,
+      "sha256": "741ae7100825e9d2df779dbf87ec897d517a854b0424af8d1f1000840b6a4b6e",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/042.webp",
+      "bytes": 20380,
+      "sha256": "ee082c30931b5271c05a62f2c687eb865c816442295880ac75de5bb5103656c2",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/043.webp",
+      "bytes": 19310,
+      "sha256": "85869534ff6f709bf7b83d0d6631dd20b8f80436f40e112cfd4457620bf0de83",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/044.webp",
+      "bytes": 18924,
+      "sha256": "a3da03202f42388a47962276df070f7e87ba8d7292b0abc84faabb9870855d15",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/045.webp",
+      "bytes": 18724,
+      "sha256": "6aa3a6db9ea7d2a89a9836b01786d718b0dd12604589324f073942ea203d8732",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/046.webp",
+      "bytes": 18688,
+      "sha256": "94f92d12e5bfc14a31742d3a8f14e71c35d35b804da44076af1723ddd0bbf508",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/047.webp",
+      "bytes": 18686,
+      "sha256": "66d168ab4339dadd8ac640ec2f88dda145d78623c9515658fca3b4cea889b747",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/048.webp",
+      "bytes": 18760,
+      "sha256": "7100ae7225edc484503c7045c096182989c2fd5ae715fb23826111244bf5858b",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/049.webp",
+      "bytes": 18322,
+      "sha256": "2d549ca86380e7c0ee0ddd4a064a2770701ec0d813167e45598a36f4ed3e6520",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/050.webp",
+      "bytes": 18346,
+      "sha256": "cf419d579e0feec2bfe15718d0467e604bc9fe1e8e60d100d18a7da1aaf62b1c",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/051.webp",
+      "bytes": 17946,
+      "sha256": "e82897cc6528a51d08c8be5bdae63897f6bb2a5e4be98550f9b8d266db0fbea5",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/052.webp",
+      "bytes": 18084,
+      "sha256": "514bfa6681ce80dc9c67aeba2152b91b678f285d24706a30fe7e30f928572039",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/053.webp",
+      "bytes": 17208,
+      "sha256": "788b5de8b1cc7669ff8b946e7b2af4153ff23009e215e021c8dabce58c1ecd9b",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/054.webp",
+      "bytes": 17742,
+      "sha256": "387199e48512110a494c259c7d00089d52e7e0f1a095a5e53e4df73698db4173",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/055.webp",
+      "bytes": 25358,
+      "sha256": "206d97c1fe8eafeaa485b8d6491ba5d3be47455a1dc9b93c9e72a2008daa2f6b",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/056.webp",
+      "bytes": 29252,
+      "sha256": "90cd461fd1aefa2e20f2b3b90bf9fb4b44183b7744c6bcaac51ddcb4622357bf",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/057.webp",
+      "bytes": 35578,
+      "sha256": "ceec03673977edb778fe107f92ec1c55b16955b1b89527edd099bf006c1c0f0a",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/058.webp",
+      "bytes": 38308,
+      "sha256": "d0eb464b16b2bfc015100de74a3e3d6a60f5f89dcddbdecf39ebf49f68d36cc4",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/059.webp",
+      "bytes": 38394,
+      "sha256": "6a7f957380e9c48215890048532ecb0ea50c33fca144cc111998527802f86c6c",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/060.webp",
+      "bytes": 39214,
+      "sha256": "68d7e66f8bfa35f73e74e6793cef84b36cfef5951ec368396393ef1a876dfb5e",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/061.webp",
+      "bytes": 38842,
+      "sha256": "5032ba4e6487562fde49065138c4bb1b1cd536c7f95a8429b071c508c3bf6699",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/062.webp",
+      "bytes": 37932,
+      "sha256": "6690e89e9f7b4beea314dcdfe4daf6e01287335dd91e4fbe57329f223f3ee722",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/063.webp",
+      "bytes": 35916,
+      "sha256": "2ad23cbd0097bc2dcd71e4443295d8a56d47c514ed12070b68bdaee9589f2bb5",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/064.webp",
+      "bytes": 34036,
+      "sha256": "cb021f98601d92d41fda88e07ce1427976ca89c471f015d2704d07617e1f91a9",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/065.webp",
+      "bytes": 30976,
+      "sha256": "5eb48d8633849d4605fa5886a07db72093eb7ae04ef2f1dbbb98b296054435e1",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/066.webp",
+      "bytes": 32614,
+      "sha256": "5cf0939ab218cd536b56b44ad8fc256ffa48023e003c6d88c4150f4089dc967a",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/067.webp",
+      "bytes": 30854,
+      "sha256": "0adb699595aa3bdda0e7927f30dd9309bdf0b24e27a21472f5ffce45339f37df",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/068.webp",
+      "bytes": 31300,
+      "sha256": "3bd41e7cdfccd6d75e4ab67757b9f50129e6f0590fbe079b0b3c1751a3750f47",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/069.webp",
+      "bytes": 31782,
+      "sha256": "8683112285a95eefe757161f058cb40ea5e3d92d53199ad9d9745bfd20109829",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/070.webp",
+      "bytes": 32526,
+      "sha256": "bccb2a16d78befa8897d675a0b58d5e8b3bb71cff523fc7804afd574c9172780",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/071.webp",
+      "bytes": 31654,
+      "sha256": "daf9a8b409326a523fdbc488c5fcfaf0a6083734cc15a6676e49c13c42831d4e",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/072.webp",
+      "bytes": 32332,
+      "sha256": "d4bb4c1a4818aaee8aa6e2591c2af7e3b55dc66441e57370d92e1b953852df17",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/073.webp",
+      "bytes": 31192,
+      "sha256": "bf217cca7455b068aa7838dfedceed6d9ce5147655f2ca227543c6bee82ae6b0",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/074.webp",
+      "bytes": 31268,
+      "sha256": "bd656e5ae19c3e9de747f5d9a32ac8db5a9bd7cc28951cb73dfca33f42dac35c",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/075.webp",
+      "bytes": 30918,
+      "sha256": "7b0c2aabacf4fffd0d8faff0f8ff251f48e5ff8f0d3dd503fde7abb71d181428",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/076.webp",
+      "bytes": 31062,
+      "sha256": "b2208104438adbbe5346cd20f33bd2ccc1b3da87add9618f8dcaf4ab66941dff",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/077.webp",
+      "bytes": 30368,
+      "sha256": "f2e9f926b31fe59568b1591733beceec6d0cfa582fb4393ad48f95ef605534a4",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/078.webp",
+      "bytes": 30606,
+      "sha256": "8d320a8d0a75fa6dd40b170a9b0f8e6a355ef82ec4aaa5f3cc95238f7a96769d",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/079.webp",
+      "bytes": 29758,
+      "sha256": "386bc989f0761a19ecb63fdb12900a03c4e5b09deff926c42795337feb01f8b7",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/080.webp",
+      "bytes": 29728,
+      "sha256": "5c8e2f7dcbe2a0681e6451c60ff27459ee9892c330e63d3db0a3294905c5acfa",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/081.webp",
+      "bytes": 29498,
+      "sha256": "f372698c2f09e98b171c774e18249b6c6831f1f8951ec10340f29b9426a05596",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/082.webp",
+      "bytes": 29658,
+      "sha256": "6f8f6d05305e4345896cef9de0e91aede47036898b95ebac428a0ebe33bbfb50",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/083.webp",
+      "bytes": 28924,
+      "sha256": "229e8f2fe307c9d3059d981b5d035e5ee9016f28d2b05217d3516465db40391b",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/084.webp",
+      "bytes": 29140,
+      "sha256": "2ddeb3ac358ccecd8f4b8abeb45e07b8a2a3cb8512fd636994c0019db06ed4ad",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/085.webp",
+      "bytes": 28256,
+      "sha256": "8e4d091e973f0435f2c67dcf334b110b50fbb22b689819c580687f16aa4fb55d",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/086.webp",
+      "bytes": 27858,
+      "sha256": "31371eff47847bc8cd657a09f966cf2b55fdd51748cf4e5e45132b5aff5ac0db",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/087.webp",
+      "bytes": 27190,
+      "sha256": "24a16640cd7a92206266f36473b5e1d33806f5eb770f25cdc456ed3e26543374",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/088.webp",
+      "bytes": 27350,
+      "sha256": "6dbb86a8dffa0aa44b3f2f42bdb3b2bc6217c7a570b55dd403876c52e6a78d34",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/089.webp",
+      "bytes": 26964,
+      "sha256": "d283cd902746762f6d06eceee2f4d055442fbfb030f6e2a8bc0b69caf0c7a34a",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/090.webp",
+      "bytes": 26914,
+      "sha256": "eda870e0622956757f7a1d3dc5a928e0875320fe353e0e6ae747f9ef588cb4b0",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/091.webp",
+      "bytes": 26424,
+      "sha256": "5c26361d735deb0b0885bb69c8c553e8fee3fa15978bd2e6302eb2997e3be2f9",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/092.webp",
+      "bytes": 25790,
+      "sha256": "3e56d1ad9ac2627d22bc6c82b4965b7c8e8b1eabfd2f444326d0bf05e49fddaa",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/093.webp",
+      "bytes": 25492,
+      "sha256": "d9664535fd96359906ef24d2e29343ca3e26e7712daf3f12a01a92100299b9d7",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/094.webp",
+      "bytes": 26038,
+      "sha256": "5c4adce828efa79df8c475e726ac9d310a4c6d72d234213916f0edde396c5ef6",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/095.webp",
+      "bytes": 25838,
+      "sha256": "6b4754f4c84588baf07042e1cb0fdb8b6c1a1c459e086532a6f22c4842f07f65",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/096.webp",
+      "bytes": 26084,
+      "sha256": "3dbe488165310bdd75d6f959e7396e0463e002e8fc2589b71999a52b9d1a7671",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/097.webp",
+      "bytes": 25758,
+      "sha256": "a7e31f3c4c07fbf98cf0ca0d97f2d1d7dc3047f80347e06af8a261fa6e3ce785",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/098.webp",
+      "bytes": 25574,
+      "sha256": "e73c639de4c2b41360d36638207f7156fe8d5c376dc26429800cab7876e3e6b6",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/099.webp",
+      "bytes": 25714,
+      "sha256": "0357164666c71d44a1cd372a8602abd3399c76055caec442f01a5c3e184c6e5d",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/100.webp",
+      "bytes": 25798,
+      "sha256": "0b6106e75bde847ce38b9441e6b78af942f696efa4a33c088bfd26f9521a20b7",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/101.webp",
+      "bytes": 25560,
+      "sha256": "ae99c61a0da49c6dbd6e756d1e8b43196cfee0a05433b0dc0e90fc164514ac73",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/102.webp",
+      "bytes": 25646,
+      "sha256": "2d18ee0a97ca6737a03c188743a199b58476ad80bfa6a0d73129462ad53a1554",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/103.webp",
+      "bytes": 25498,
+      "sha256": "88b250fa454165381dc247568d3d919dcfbb1353f348ed7ddc20c6f772f1ebd2",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/104.webp",
+      "bytes": 26644,
+      "sha256": "b7dac7da1984d3269e4606848cd6892e9148bf661558335e5694e38a54423795",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/105.webp",
+      "bytes": 34608,
+      "sha256": "b448ff036ab600b0a39818aa478c79b292cbc4d22063442abdbc1c3e5efda551",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/106.webp",
+      "bytes": 41884,
+      "sha256": "459a31a2a8b48b9de70fa5ed2a5128bbfd07361896d70a96d9a14acbacb73b56",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/107.webp",
+      "bytes": 51586,
+      "sha256": "b5fb9f3da7ec43cccfdc72b1e1f88d8113e418dcaad9c600036501ecd4efb44e",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/108.webp",
+      "bytes": 54436,
+      "sha256": "89605f600dbf7e51c0c2c3e757f817901dc3de2b75bcf3169e6e93f9c68a29b7",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/109.webp",
+      "bytes": 45324,
+      "sha256": "b67e71c185144e9267fa63f9d840a39e4d572762305f222982ff27a8563cfb43",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/110.webp",
+      "bytes": 41438,
+      "sha256": "695b5cd9af7040c7a5488bbf5b239142878980d8a67084c6f09fc1a3c1f55e44",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/111.webp",
+      "bytes": 40428,
+      "sha256": "6dacbd721d1d884b75d5fabd1fa106acf78056e3bd82b0cafa1c2dcb48297c78",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/112.webp",
+      "bytes": 38700,
+      "sha256": "907a469f612bf7ce58440a2545776da0857e97c6b6c3e7396f2efe12fc3d17e0",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/113.webp",
+      "bytes": 30752,
+      "sha256": "cf312c4bcad23efebbe6bb3eb123a2e895a88f893e0edccae8a08fed9d73b053",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/114.webp",
+      "bytes": 30326,
+      "sha256": "f93473a61e9c41f9878ae2ce1047bb21682ce2db29341db54bba35ccf8cae1ff",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/115.webp",
+      "bytes": 25504,
+      "sha256": "df1379c9402351a70d0cc0a0d97585b6d9a0f8725e6b0c3ed44378b1a2d5f986",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/116.webp",
+      "bytes": 23382,
+      "sha256": "28f0b67986fd9d458ada1d668986b8c8d73dc1fe74580a6d8a302f011c77705b",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/117.webp",
+      "bytes": 21994,
+      "sha256": "9f2df0bc73f3dbffed4483b649766846438b85ee31ef993268597f23b9db3181",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/118.webp",
+      "bytes": 21338,
+      "sha256": "3b8c805798ca71d7f5f5170c0a4b2b2e28e211ce8f8bf9f3bcbc7123de4708bf",
+      "durationMs": 84
+    },
+    {
+      "file": "frames/119.webp",
+      "bytes": 18988,
+      "sha256": "f81866c66087a7b6ff5564828cc3717eef03172a01e3572649540a8061df6da8",
+      "durationMs": 83
+    },
+    {
+      "file": "frames/120.webp",
+      "bytes": 18958,
+      "sha256": "e895cb60526c0f1213c0018321986abb06ada9f690bfc79ff7fa764a62536026",
+      "durationMs": 42
+    }
+  ]
+}
