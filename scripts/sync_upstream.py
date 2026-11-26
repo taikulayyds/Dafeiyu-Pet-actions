@@ -187,11 +187,26 @@ def validate_legacy(item):
     if item.get('releaseTag') == 'youxian-hengga-v1' and item['package']['sha256'] != expected:
         raise RuntimeError('Legacy package protection failed')
 
+def scoped_unchanged(previous, entry, title):
+    """Only an explicitly selected action may use a new toolchain in a scoped run.
+
+    Every non-selected action must still match pinned upstream identity/content;
+    this is not a way to silently ignore changed or newly added source assets.
+    """
+    if (not previous or previous.get('source', {}).get('gitBlob') != entry['sha']
+            or previous.get('title') != title or previous.get('profile') != PROFILE
+            or previous.get('status') != 'active'):
+        raise RuntimeError('Non-selected action changed upstream; run a full sync')
+    return True
+
+
 def main():
     started = time.monotonic()
     parser = argparse.ArgumentParser()
     parser.add_argument('--publish', action='store_true', help='Publish immutable ZIP assets; does not git-push')
     parser.add_argument('--max-actions', type=int, default=0)
+    parser.add_argument('--only-action', choices=['youxian-hengga'],
+                        help='One-time scoped standardization; all other actions must be unchanged')
     args = parser.parse_args()
     if args.max_actions < 0:
         parser.error('--max-actions must not be negative')
@@ -222,31 +237,28 @@ def main():
         previous = old.get(ident)
         if previous:
             validate_legacy(previous)
-        # The initial legacy clip is deliberately retained byte-exact.
-        is_legacy = previous and ident == 'youxian-hengga' and previous.get('releaseTag') == 'youxian-hengga-v1'
+        # Legacy assets remain protected until retirement, but the active clip
+        # now follows exactly the same conversion path as every other action.
         unchanged = previous and previous.get('source', {}).get('gitBlob') == entry['sha'] and previous.get('profile') == PROFILE and previous.get('recipe') == build_recipe and previous.get('title') == title
-        planned.append((entry, ident, title, previous, bool(unchanged), bool(is_legacy)))
+        if args.only_action and ident != args.only_action:
+            scoped_unchanged(previous, entry, title)
+        planned.append((entry, ident, title, previous, bool(unchanged)))
+    if args.only_action and (seen != set(old) or args.only_action not in seen):
+        raise RuntimeError('Scoped sync requires the complete unchanged action inventory')
     print(f'Pinned upstream {commit}; {len(sources)} actions; profile {PROFILE}', flush=True)
     changed = 0
     results = dict(old)
     pending = []
     with tempfile.TemporaryDirectory(prefix='dfy-actions-') as temp:
         temp = Path(temp)
-        for entry, ident, title, previous, unchanged, is_legacy in planned:
+        for entry, ident, title, previous, unchanged in planned:
+            if args.only_action and ident != args.only_action:
+                continue  # Keep every field of non-selected entries byte-for-byte.
             if unchanged:
                 results[ident]['status'] = 'active'
                 continue
             data = source_bytes(commit, entry)
             sha = hashlib.sha256(data).hexdigest()
-            if is_legacy and previous['source']['sha256'] == sha:
-                copy = json.loads(json.dumps(previous))
-                copy['source']['gitBlob'] = entry['sha']
-                copy['status'] = 'active'
-                copy['build85Compatible'] = True
-                results[ident] = copy
-                continue
-            if is_legacy:
-                raise RuntimeError('Legacy v1 source changed; manual review required; old v1 retained')
             if args.max_actions and changed >= args.max_actions:
                 continue
             print(f'Convert {ident}: {title}', flush=True)
@@ -274,6 +286,21 @@ def main():
                 raise RuntimeError('Converter package license does not match approved template')
             if converted['source_probe']['alpha_min'] >= 255 or converted['source_probe']['alpha_max'] == 0:
                 raise RuntimeError('Decoded transparency/content validation failed: ' + ident)
+            if args.only_action:
+                # Repeat the real source conversion in a separate directory;
+                # no publication is permitted unless the complete ZIP repeats.
+                repeat_output = temp / 'repeat' / ident
+                repeat_cmd = list(cmd)
+                repeat_cmd[repeat_cmd.index('--out-dir') + 1] = str(repeat_output)
+                repeat = subprocess.run(repeat_cmd, check=True, capture_output=True, text=True,
+                                        timeout=1200, env=validation.clean_environment())
+                repeat_package = Path(json.loads(repeat.stdout)['zip']['path'])
+                validation.validated_output(repeat_output, repeat_package, clip=ident, title=title,
+                                            commit=commit, source_file=entry['path'], source_sha=sha,
+                                            expected_duration_ms=source_duration_ms)
+                if repeat_package.read_bytes() != package.read_bytes():
+                    raise RuntimeError('Real source double-build ZIP is not reproducible')
+                print('PASS real source double-build ZIP byte-identical: ' + ident, flush=True)
             # The public revision is addressed by the complete validated ZIP bytes.
             revision = hashlib.sha256(package.read_bytes()).hexdigest()[:16]
             tag = ident + '-12fps-' + revision

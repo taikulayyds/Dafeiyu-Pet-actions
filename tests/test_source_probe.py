@@ -51,7 +51,10 @@ class IndependentSourceProbe(unittest.TestCase):
         text = (ROOT / '.github/workflows/sync-upstream.yml').read_text()
         self.assertIn('default: preview', text)
         self.assertIn("vars.ACTION_SYNC_ENABLED == 'true'", text)
-        self.assertIn('python3 scripts/sync_upstream.py\n', text)
+        self.assertIn('args+=(--publish)', text)
+        self.assertIn('args+=(--only-action youxian-hengga)', text)
+        self.assertIn('python3 scripts/sync_upstream.py "${args[@]}"', text)
+        self.assertIn("github.event.inputs.action || 'all'", text)
         self.assertIn('sync-report.json', text)
 
 if __name__ == '__main__':

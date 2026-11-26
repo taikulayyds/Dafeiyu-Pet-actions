@@ -9,6 +9,12 @@ on:
         options: [preview, publish]
         default: preview
         required: true
+      action:
+        description: 'All actions, or scoped standardization of the former v1 clip'
+        type: choice
+        options: [all, youxian-hengga]
+        default: all
+        required: true
   schedule:
     - cron: '17 */6 * * *'
 
@@ -45,12 +51,18 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           SYNC_MODE: ${{ github.event.inputs.mode || 'publish' }}
+          SYNC_ACTION: ${{ github.event.inputs.action || 'all' }}
         run: |
-          if [ "$SYNC_MODE" = publish ]; then
-            python3 scripts/sync_upstream.py --publish
-          else
-            python3 scripts/sync_upstream.py
+          args=()
+          if [ "$SYNC_ACTION" = youxian-hengga ]; then
+            args+=(--only-action youxian-hengga)
+          elif [ "$SYNC_ACTION" != all ]; then
+            echo 'Invalid scoped action'; exit 1
           fi
+          if [ "$SYNC_MODE" = publish ]; then
+            args+=(--publish)
+          fi
+          python3 scripts/sync_upstream.py "${args[@]}"
       - name: Preserve verification and capacity report
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
