@@ -149,5 +149,14 @@
     "actions/youxian-hengga/frames/118.webp": "a7b4e172063e512c503aaaf97f37e812ab11a0a63e5f86e70998a35f25360c3d",
     "actions/youxian-hengga/frames/119.webp": "aa35d9187582440622df8237ac5ac653a8b1a2f3e82dd412ea3f9046bca18a6f",
     "actions/youxian-hengga/manifest.json": "e452d01cdd580ba4d7aac28a0ba54e87cfa1c0fe55695c9a7bc0d5787108b1db"
+  },
+  "status": "retired",
+  "reason": "User approved removal after verified standard replacement, 2026-11-26",
+  "replacement": {
+    "clip": "youxian-hengga",
+    "version": "8bc1e60ae6e42912",
+    "releaseTag": "youxian-hengga-12fps-8bc1e60ae6e42912",
+    "packageSHA256": "8bc1e60ae6e42912d5e0ea9b9fd4a6babc50f8aad068bcdbe9cd8d34f9c5b412",
+    "manifestSHA256": "79355866b802e25d192cd81bbd94f49e94abca52fc78e9b2a15b64dbfb682edf"
   }
 }

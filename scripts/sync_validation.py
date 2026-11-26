@@ -26,9 +26,30 @@ def require_plain_tree(root):
 
 def check_legacy(root):
     record = json.loads((root / 'legacy-v1.json').read_text())
+    status = record.get('status', 'retained')
+    if status not in ('retained', 'retired'):
+        raise RuntimeError('Unknown legacy retirement status')
+    if status == 'retired':
+        replacement = record.get('replacement', {})
+        revision = replacement.get('version')
+        if (not isinstance(revision, str) or not re.fullmatch('[0-9a-f]{16}', revision)
+                or replacement.get('clip') != 'youxian-hengga'
+                or replacement.get('releaseTag') != 'youxian-hengga-12fps-' + revision
+                or not isinstance(replacement.get('packageSHA256'), str)
+                or not re.fullmatch('[0-9a-f]{64}', replacement['packageSHA256'])
+                or replacement['packageSHA256'][:16] != revision
+                or not isinstance(replacement.get('manifestSHA256'), str)
+                or not re.fullmatch('[0-9a-f]{64}', replacement['manifestSHA256'])):
+            raise RuntimeError('Invalid verified legacy replacement')
+        manifest = safe_destination(root, 'actions/youxian-hengga/revisions/' + revision + '/manifest.json')
+        if not manifest.is_file() or sha(manifest.read_bytes()) != replacement['manifestSHA256']:
+            raise RuntimeError('Verified legacy replacement is missing or changed')
     for relative, expected in record['files'].items():
         path = safe_destination(root, relative)
-        if path.is_symlink() or not path.is_file() or sha(path.read_bytes()) != expected:
+        if status == 'retired':
+            if path.exists() or path.is_symlink():
+                raise RuntimeError('Retired legacy resource reintroduced: ' + relative)
+        elif path.is_symlink() or not path.is_file() or sha(path.read_bytes()) != expected:
             raise RuntimeError('Legacy v1 retained file changed: ' + relative)
     return record['catalogEntry']
 
@@ -170,7 +191,10 @@ def validate_catalog(root, catalog):
     legacy = check_legacy(root)
     if not isinstance(catalog, dict) or type(catalog.get('schema')) is not int or catalog['schema'] != 1 or catalog.get('repository') != 'https://github.com/taikulayyds/Dafeiyu-Pet-actions' or not isinstance(catalog.get('actions'), list):
         raise RuntimeError('Invalid catalog schema/repository')
-    if 'legacy' in catalog and catalog['legacy'] != [legacy]:
+    retired = json.loads((root / 'legacy-v1.json').read_text()).get('status') == 'retired'
+    if retired and catalog.get('legacy') != []:
+        raise RuntimeError('Retired legacy entry must not be advertised')
+    if not retired and 'legacy' in catalog and catalog['legacy'] != [legacy]:
         raise RuntimeError('Legacy catalog retention changed')
     approved_license = (root / 'LICENSE.txt').read_bytes()
     seen = set()
@@ -184,6 +208,8 @@ def validate_catalog(root, catalog):
         # Legacy v1 intentionally uses its frozen original timing and LICENSE,
         # not the new 12fps grid or the current root attribution template.
         if item.get('manifest') == legacy['manifest']:
+            if retired:
+                raise RuntimeError('Retired legacy clip cannot become active again')
             for key, value in legacy.items():
                 actual = item.get(key)
                 if key == 'source' and isinstance(actual, dict):

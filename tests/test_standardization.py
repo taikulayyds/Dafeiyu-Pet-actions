@@ -77,6 +77,7 @@ class ScopedOrchestration(unittest.TestCase):
             originals = copy.deepcopy(kept)
             (root/'LICENSE.txt').write_text('approved')
             (root/'sync-policy.json').write_text('{}')
+            (root/'legacy-v1.json').write_text('{}')
             (root/'action-map.json').write_text(json.dumps({'song':{'id':'youxian-hengga','title':'Song'},
                                                           'other':{'id':'other','title':'Other'}}))
             (root/'catalog.json').write_text(json.dumps({'actions':[kept,target]}))

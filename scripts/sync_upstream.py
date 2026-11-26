@@ -351,7 +351,7 @@ def main():
     catalog['actions'] = sorted(results.values(), key=lambda x: x['clip'])
     catalog['upstream'] = {'repository': SOURCE_URL, 'commit': commit, 'actionCount': len(sources)}
     catalog['sync'] = {'profile': PROFILE, 'intervalHours': 6, 'deletionPolicy': 'mark-only', 'licenseChangePolicy': 'manual-review'}
-    catalog['legacy'] = [legacy]
+    catalog['legacy'] = [] if read_json(ROOT / 'legacy-v1.json').get('status') == 'retired' else [legacy]
     validation.check_legacy(ROOT)
     if args.publish:
         validation.validate_catalog(ROOT, catalog)

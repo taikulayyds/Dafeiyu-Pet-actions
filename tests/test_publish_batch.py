@@ -20,6 +20,7 @@ class BatchPublishGate(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             for name, data in [('LICENSE.txt', 'approved text'), ('sync-policy.json','{}'),
+                               ('legacy-v1.json','{}'),
                                ('action-map.json','{"a":{"id":"a"},"b":{"id":"b"}}'), ('catalog.json','{"actions":[]}')]:
                 (root/name).write_text(data)
             entries = [{'path':sync.PREFIX + x + '.webm', 'sha':sync.git_blob(x.encode()),

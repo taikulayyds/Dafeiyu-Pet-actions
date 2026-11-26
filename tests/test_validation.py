@@ -19,6 +19,24 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 import sync_validation as validation
 
 
+def sample_webp():
+    """Synthetic decoded-image fixture, independent of retired production frames."""
+    from functools import lru_cache
+    return _sample_webp()
+
+
+from functools import lru_cache
+@lru_cache(maxsize=1)
+def _sample_webp():
+    import io
+    from PIL import Image, ImageDraw
+    image = Image.new('RGBA', (640, 360), (0, 0, 0, 0))
+    ImageDraw.Draw(image).rectangle((260, 80, 380, 290), fill=(80, 120, 200, 255))
+    stream = io.BytesIO()
+    image.save(stream, format='WEBP', lossless=True)
+    return stream.getvalue()
+
+
 class OutputValidation(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory(prefix='dfy-validation-test-')
@@ -26,8 +44,8 @@ class OutputValidation(unittest.TestCase):
         self.base = Path(self.temp.name)
         self.output = self.base / 'action'
         (self.output / 'frames').mkdir(parents=True)
-        # Read-only retained WebP copy; validation decodes it independently.
-        data = (ROOT / 'actions/youxian-hengga/frames/000.webp').read_bytes()
+        # Actual transparent WebP bytes, independent of any retained asset.
+        data = sample_webp()
         (self.output / 'frames/000.webp').write_bytes(data)
         (self.output / 'LICENSE.txt').write_bytes((ROOT / 'LICENSE.txt').read_bytes())
         self.kwargs = dict(clip='test-action', title='Test action', commit='a'*40,

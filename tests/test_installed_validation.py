@@ -22,13 +22,20 @@ class InstalledValidation(unittest.TestCase):
         fixtures.OutputValidation.setUp(self)
         self.root = self.base / 'repo'
         self.root.mkdir()
-        record = json.loads((ROOT / 'legacy-v1.json').read_text())
-        shutil.copyfile(ROOT / 'legacy-v1.json', self.root / 'legacy-v1.json')
+        # Historical compatibility guards use an explicitly synthetic legacy
+        # fixture. No retired production image is kept just to satisfy tests.
+        audit = json.loads((ROOT / 'legacy-v1.json').read_text())
+        record = {'schema': 1, 'catalogEntry': copy.deepcopy(audit['catalogEntry']), 'files': {}}
         shutil.copyfile(ROOT / 'LICENSE.txt', self.root / 'LICENSE.txt')
-        for name in record['files']:
+        for name, data in {
+                'actions/youxian-hengga/LICENSE.txt': b'Frozen synthetic legacy license',
+                'actions/youxian-hengga/manifest.json': b'{}',
+                'actions/youxian-hengga/frames/000.webp': fixtures.sample_webp()}.items():
             dest = self.root / name
             dest.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(ROOT / name, dest)
+            dest.write_bytes(data)
+            record['files'][name] = validation.sha(data)
+        (self.root / 'legacy-v1.json').write_text(json.dumps(record))
         revision = '0123456789abcdef'
         self.relative = f'actions/test-action/revisions/{revision}'
         self.installed = self.root / self.relative
@@ -182,7 +189,7 @@ class DecodeAndTiming(unittest.TestCase):
 
     def test_png_renamed_webp_and_wrong_canvas_rejected(self):
         from PIL import Image
-        with Image.open(ROOT / 'actions/youxian-hengga/frames/000.webp') as source:
+        with Image.open(__import__('io').BytesIO(fixtures.sample_webp())) as source:
             image = source.copy()
         self.replace_image(image, format='PNG')
         with self.assertRaises(RuntimeError):
@@ -193,7 +200,7 @@ class DecodeAndTiming(unittest.TestCase):
 
     def test_invisible_opaque_and_animated_frames_rejected(self):
         from PIL import Image
-        with Image.open(ROOT / 'actions/youxian-hengga/frames/000.webp') as source:
+        with Image.open(__import__('io').BytesIO(fixtures.sample_webp())) as source:
             image = source.copy().convert('RGBA')
         image.putalpha(0)
         self.replace_image(image, format='WEBP')
@@ -203,7 +210,7 @@ class DecodeAndTiming(unittest.TestCase):
         self.replace_image(image, format='WEBP')
         with self.assertRaises(RuntimeError):
             self.validate()
-        with Image.open(ROOT / 'actions/youxian-hengga/frames/000.webp') as source:
+        with Image.open(__import__('io').BytesIO(fixtures.sample_webp())) as source:
             original = source.copy()
         changed = original.copy()
         changed.putpixel((320, 180), (255, 0, 0, 255))
@@ -219,7 +226,7 @@ class DecodeAndTiming(unittest.TestCase):
                 self.validate()
 
     def test_specified_full_timing_classes_with_real_decoded_frames(self):
-        data = (ROOT / 'actions/youxian-hengga/frames/000.webp').read_bytes()
+        data = fixtures.sample_webp()
         for total_ms, count in ((10042, 121), (5125, 62), (4917, 59)):
             with self.subTest(total_ms=total_ms):
                 frames = []

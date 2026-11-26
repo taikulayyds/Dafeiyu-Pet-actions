@@ -6,7 +6,7 @@ on:
       mode:
         description: 'preview validates all actions without publishing; publish creates immutable resources'
         type: choice
-        options: [preview, publish]
+        options: [preview, publish, verify]
         default: preview
         required: true
       action:
@@ -48,6 +48,7 @@ jobs:
       - name: Test conversion and sync safeguards
         run: python3 -m unittest discover -s tests -v
       - name: Convert new or changed upstream actions
+        if: github.event.inputs.mode != 'verify'
         env:
           GH_TOKEN: ${{ github.token }}
           SYNC_MODE: ${{ github.event.inputs.mode || 'publish' }}
